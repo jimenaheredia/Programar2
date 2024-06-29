@@ -1,3 +1,7 @@
+let generoNombre;
+let artista;
+let discoElegido;
+let precioDisco;
 
 alert('¡Bienvenido a CherrySide, tu dealer favorito de vinilos!\nSumérgete en la electrizante atmósfera de nuestra tienda especializada en vinilos de rock y sus subgéneros.');
 
@@ -14,12 +18,13 @@ saludar ();
 //Aquí le pedimos que escoja un género
 function opcionGenero() {
     let generos = '1. Heavy Metal\n2. Nu Metal\n3. Rock Progresivo\n4. Rock Psicodélico\n5. Shoegaze';
-    let generoElegido = parseInt(prompt(`¿Qué género musical te apasiona hoy?\nElige un número:\n${generos}`));
+    generoElegido = parseInt(prompt(`¿Qué género musical te apasiona hoy?\nElige un número:\n${generos}`));
 
     if(isNaN(generoElegido)|| generoElegido < 1 || generoElegido > 5) {
         alert('Ingrese un número válido, por favor');
+        generoElegido = null;
+        opcionGenero();
     } else {
-        let generoNombre;
         switch (generoElegido) {
             case 1:
                 generoNombre = 'Heavy Metal';
@@ -38,16 +43,15 @@ function opcionGenero() {
                 break;
             default: 
                 alert('Opción no válida. Ingrese un número correcto.');
-                return null;
+                opcionGenero();
         }
-        return generoNombre;
     }
 }
 
 // Acá definimos el catálogo y lo mostramos
-function mostrarCatalogo (generoNombre) {
+function mostrarCatalogo (generoNom) {
     let catalogoElegido;
-    switch (generoNombre) {
+    switch (generoNom) {
         case 'Heavy Metal':
             catalogoElegido = '1- Iron Maiden - The Number of the Beast - S/. 160.00\n2- Metallica - ...And Justice For All - S/. 120.00\n3- Megadeth - Countdown To Extinction - S/. 380.00\n4- Rammstein - Sehnsucht - S/. 170.00\n5- Judas Priest - British Steel - S/. 190.00';
             break;
@@ -64,30 +68,28 @@ function mostrarCatalogo (generoNombre) {
             catalogoElegido = '1- Slowdive - Souvlaki - S/. 200.00\n2- Cocteau Twins - Heaven or Las Vegas - S/. 159.00\n3- my bloody valentine - loveless- S/. 140.00\n4- Beach House - Bloom- S/. 135.00\n5- DIIV - Deceiver- S/. 135.00';
             break;
         default: 
-            alert("Opción no válida. Ingrese un número correcto.");
-            return null;
+            alert('Opción no válida. Ingrese un número correcto.');
+            break;
     }
 
-    let artista = parseInt(prompt(`Tenemos estos vinilos de ${generoNombre} en stock, cuéntanos ¿qué disco te gustaría llevar a casa?:\n${catalogoElegido}\nEscoge un número.`));
+    artista = null;
+    artista = parseInt(prompt(`Tenemos estos vinilos de ${generoNom} en stock, cuéntanos ¿qué disco te gustaría llevar a casa?:\n${catalogoElegido}\nEscoge un número.`));
 
     if (isNaN(artista) || artista < 1 || artista > 5) {
         alert('Opción no válida, por favor intenta de nuevo.');
+        mostrarCatalogo (generoNom);
     }
-
-    return {generoNombre, artista};
 }
 
 // Aquí definimos el precio que se mostrará
 function obtenerDiscoYPrecio (generoNombre, artista) {
-    let discoElegido;
-    let precioDisco;
 
     if (generoNombre === 'Heavy Metal') {
         if (artista === 1) {discoElegido = 'Iron Maiden - The Number of the Beast'; precioDisco = 160;}
-        else if (artista === 2) {discoElegido = 'Iron Maiden - The Number of the Beast'; precioDisco = 160;}
-        else if (artista === 3) {discoElegido = 'Iron Maiden - The Number of the Beast'; precioDisco = 160;}
-        else if (artista === 4) {discoElegido = 'Iron Maiden - The Number of the Beast'; precioDisco = 160;}
-        else if (artista === 5) {discoElegido = 'Iron Maiden - The Number of the Beast'; precioDisco = 160;}
+        else if (artista === 2) {discoElegido = 'Metallica - ...And Justice For All'; precioDisco = 120;}
+        else if (artista === 3) {discoElegido = 'Megadeth - Countdown To Extinction'; precioDisco = 380;}
+        else if (artista === 4) {discoElegido = 'Rammstein - Sehnsucht'; precioDisco = 170;}
+        else if (artista === 5) {discoElegido = 'Judas Priest - British Steel'; precioDisco = 190;}
     }
     if (generoNombre === 'Nu Metal') {
         if (artista === 1) {discoElegido = 'Deftones - Around The Fur'; precioDisco = 160;}
@@ -117,7 +119,6 @@ function obtenerDiscoYPrecio (generoNombre, artista) {
         else if (artista === 4) {discoElegido = 'Beach House - Bloom'; precioDisco = 135;}
         else if (artista === 5) {discoElegido = 'DIIV - Deceiver'; precioDisco = 135;}
     }
-    return {disco: discoElegido, precio: precioDisco};
 }
 
 // Acá mostramos el precio total más el envío
@@ -130,14 +131,13 @@ function totalPrecio (disco, precio) {
 }
 
 function opcionArtista() {
-    let generoNombre = opcionGenero();
-    if (!generoNombre) return;
 
-    let seleccion = mostrarCatalogo(generoNombre);
-    if (!seleccion) return;
+    opcionGenero();
 
-    let {disco, precio} = obtenerDiscoYPrecio(generoNombre, seleccion.artista);
-    totalPrecio(disco, precio);
+    mostrarCatalogo(generoNombre);
+
+    obtenerDiscoYPrecio(generoNombre, artista);
+    totalPrecio(discoElegido, precioDisco);
 }
 
 opcionArtista();
