@@ -3,11 +3,37 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*falta el font family*/
 
 h1, h2, h3, h4, h5, h6, p, ul, a, input, textarea {
     margin:0;
     padding: 0;
+}
+
+h1 {
+    font-family: Honk;
+    margin: 20px 0 20px 0; 
+}
+
+h2 {
+    font-family: Jaro;
+    color: black;
+    font-size: 20px;
+}
+
+h3 {
+    font-family: Honk;
+}
+
+:root {
+    --primary-bg: #ffffff; /* Background color */
+    --primary-border: #F2CD5E; /* Border color (e.g., warning color) */
+    --primary-text: #311239; /* Light text */
+    --secondary-text: black;
+    --secondary-bg: #F2CD5E; /* Darker background */
+    --btn-color: #311239; /* Button color */
+    --btn-text-color: #F2CD5E; /* Button text color */
+    --btn-hover-bg: #F52D97; /* Hover background color */
+    --btn-hover-text: black; /* Hover text color */
 }
 
 ul {
@@ -16,4 +42,310 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* index 
+/* nav */
+
+nav.navWeb {
+    width: 100%;
+    background-color: #311239;
+}
+
+.logocontainer {
+    width: 150px;
+    height: 150px;
+}
+.imagecontainer img {
+    width: 150px;
+    height: 150px;
+}
+
+ul.menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 20px 25px 10px 25px;
+    height: 150px;
+}
+
+ul.menunav .logocontainer {
+    margin-right: auto;
+}
+
+ul.menunav li {
+    margin-left: 30px;
+}
+
+ul.menunav li a {
+    text-decoration: none;
+    color: #F2CD5E;
+}
+
+.opcionNav {
+    display: flex;
+    align-content: center;
+    margin-right: 20px;
+    font-family: Jaro;
+    font-size: 25px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Section 2 */
+
+.section2 {
+    text-align: center;
+    height: 450px;
+}
+
+.genero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px; 
+    list-style-type: none;
+    padding: 30px;
+    margin: 0 70px 20px 70px;
+}
+
+.genre-grid li {
+    display: flex;
+    justify-content: center;
+}
+
+.botonmenu,
+form button {
+    width: 270px;
+    padding: 10px;
+    background-color: #311239;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Cabin;
+    color: #F2CD5E;
+}
+
+.botonmenu:hover,
+form button:hover {
+    background-color: #F2CD5E;
+    color: #F52D97;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Section3 */
+.section3 {
+    height: 60px;
+    text-align: center;
+    background-color: #F2CD5E;
+}
+
+.containersection3 {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    gap: 20px;
+}
+
+.objetosection3 {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-align: center; 
+    padding: 10px;
+}
+
+.objetosection3 i {
+    font-size: 16px; 
+    margin-right: 8px;
+    color:black;
+    margin-top: 15px;
+}
+
+.titulosection3 {
+    margin: 10px 0 10px 0; 
+}
+
+/*footer*/
+.footer {
+    padding: 30px;
+    background-color:#311239;
+}
+
+.containerfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    margin: 10px 35px 0 40px;
+}
+
+.containerfooter1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo2 {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    gap: 60px; 
+    margin-top: 10px;
+}
+
+.containerfooter2,
+.containerfooter3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.redessociales,
+.contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.instagram, .correo, .facebook, .whatsapp {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.redessociales i,
+.contacto i {
+    font-size: 16px; 
+    margin-right: 10px;
+    color:#F2CD5E;
+}
+
+.pcontactanos3 {
+    margin: 0;
+    font-size: 14px;
+    color:#F2CD5E;
+    font-family: Cabin;
+}
+
+/*Rock Alternativo*/
+
+.section2rockalt {
+    text-align: center;
+    height: auto;
+    margin: 0 20px 40px 20px;
+}
+
+.custom-card {
+    background-color: var(--primary-bg) !important;
+    border-color: var(--primary-border) !important;
+    font-family: Cabin;
+}
+
+.custom-card .card-title {
+    color: var(--primary-text) !important;
+    font-size: 16px;
+    text-align: center;
+}
+
+.custom-card .card-text {
+    color: var(--secondary-text) !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.custom-card .card-body {
+    background-color: var(--secondary-bg);
+    padding: 10px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.custom-card .btn {
+    background-color: var(--btn-color) !important;
+    color: var(--btn-text-color) !important;
+    border-color: var(--btn-color) !important;
+    height: 40px;
+}
+
+/* Custom button styles */
+.custom-btn {
+    background-color: var(--btn-color) !important;
+    color: var(--btn-text-color) !important;
+    border-color: var(--btn-color) !important;
+}
+
+.custom-btn:hover {
+    background-color: var(--btn-hover-bg)!important;
+    color: var(--btn-hover-text)!important;
+}
+
+.custom-card .card-img-top {
+    max-width: 400px;  /* Ajusta el ancho máximo de la imagen */
+    height: 400px;     /* Mantiene la proporción de la imagen */
+}
+
+.custom-card {
+    max-width: 400px; /* Ancho máximo de la tarjeta */
+    margin: 0 auto;   /* Centrar la tarjeta horizontalmente */
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+}
+
+/*Rock Progresivo*/
+
+.section2rockprogre {
+    text-align: center;
+    height: auto;
+    margin: 0 20px 40px 20px;
+}
+
+/*Rock Psicodélico*/
+.section2rockpsico {
+    text-align: center;
+    height: auto;
+    margin: 0 20px 60px 20px;
+}
+
+/*Carrito de compras*/
+.section2carrito {
+    text-align: center;
+    height: auto;
+    margin: 0 20px 60px 20px;
+}
+
+.precioTotal {
+    font-size: 30px;
+}
+
+.mt-4 {
+    padding: 20px;
 }
