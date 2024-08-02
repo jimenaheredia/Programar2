@@ -44,5 +44,5 @@ function eliminarCarrito(disco) {
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    locarion.reload();
+    location.reload();
 }

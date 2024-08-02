@@ -28,6 +28,7 @@ function eliminarCarrito(disco) {
         carrito.splice(indice, 1);
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    location.reload();
 }
 
 
