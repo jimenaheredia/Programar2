@@ -6,7 +6,7 @@ class Disco {
         this.album = album
         this.precio = precio
         this.id = set_id++
-        this.img = `../images/${artista.toLowerCase()}.png`;
+        this.img = `../images/${artista}.png`;
     }
 }
 
