@@ -6,7 +6,7 @@ class Disco {
         this.album = album
         this.precio = precio
         this.id = set_id++
-        this.img = `images/${artista.toLowerCase()}.png`;
+        this.img = `https://github.com/jimenaheredia/Programar2/blob/master/images/${artista.toLowerCase().replace(/ /g, '%20')}.png?raw=true`;
     }
 }
 

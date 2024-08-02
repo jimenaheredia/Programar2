@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Crear y configurar el botón de eliminación
         let button = copia.querySelector('button');
-        button.textContent = 'Eliminar'; // Opcional: Cambiar texto del botón
+        button.textContent = 'Eliminar';
         button.addEventListener('click', () => {
             eliminarCarrito(disco);
         });
@@ -44,6 +44,5 @@ function eliminarCarrito(disco) {
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    location.reload();
+    locarion.reload();
 }
-
