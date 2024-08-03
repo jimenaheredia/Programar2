@@ -44,8 +44,21 @@ a {
     text-decoration: none;
 }
 
+main {
+    flex: 1;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
+    min-height: 100vh;
 }
 
 /* index 
@@ -65,13 +78,13 @@ nav.navWeb {
     height: 150px;
 }
 
-ul.menunav {
+.menunav {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    margin: 20px 25px 10px 25px;
+    margin: 0 25px 10px 25px;
     height: 150px;
 }
 
@@ -180,6 +193,7 @@ form button:hover {
 .footer {
     padding: 30px;
     background-color:#311239;
+    margin-top: auto;
 }
 
 .containerfooter {
