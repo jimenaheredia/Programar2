@@ -17,7 +17,18 @@ function agregarAlCarrito(disco) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.push(disco);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${disco.album} agregado al carrito.`);
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "El disco ha sido agregado al carrito",
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+        popup: 'custom-swal-popup',
+        title: 'custom-swal-title',
+        content: 'custom-swal-content',
+        }
+    });
 }
 
 function eliminarCarrito(disco) {
@@ -52,5 +63,3 @@ catalogoFiltrado.forEach((Disco) => {
     // Bajar a donde? -> al contenedor
     container_cards.append(copia)
 })
-
-

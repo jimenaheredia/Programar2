@@ -84,7 +84,7 @@ nav.navWeb {
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    margin: 0 25px 10px 25px;
+    margin: 0 25px 0 25px;
     height: 150px;
 }
 
@@ -120,6 +120,7 @@ h1 {
 .section2 {
     text-align: center;
     height: 450px;
+    background-color: #ec6db0;
 }
 
 .genero-grid {
@@ -160,7 +161,7 @@ form button:hover {
 .section3 {
     height: 60px;
     text-align: center;
-    background-color: #F2CD5E;
+    background-color:#F2CD5E;
 }
 
 .containersection3 {
@@ -312,13 +313,12 @@ form button:hover {
 }
 
 .custom-card .card-img-top {
-    max-width: 400px;  /* Ajusta el ancho máximo de la imagen */
-    height: 400px;     /* Mantiene la proporción de la imagen */
+    max-width: 400px;  
 }
 
 .custom-card {
-    max-width: 400px; /* Ancho máximo de la tarjeta */
-    margin: 0 auto;   /* Centrar la tarjeta horizontalmente */
+    max-width: 400px; 
+    margin: 0 auto;   
 }
 
 .btn-container {
@@ -362,4 +362,71 @@ form button:hover {
 
 .mt-4 {
     padding: 20px;
+}
+
+/*Pop up de carrito de compras 'Añadido al carrito'*/
+
+/* Estilos para el contenedor principal del popup */
+.custom-swal-popup {
+    border-radius: 10px;
+    background-color:whitesmoke;
+}
+
+  /* Estilos para el título */
+.custom-swal-title {
+    font-family: Jaro;
+    color:#311239; 
+    font-size: 20px; 
+}
+
+  /* Estilos para el contenido del mensaje */
+.custom-swal-content {
+    font-size: 16px;
+    color: black;
+    padding: 10px;
+}
+
+/*Estilos para la parte de Spotify*/
+
+.spomusic1 {
+    background-color:#311239;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.spomusic2 {
+    background-color:#ec6db0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.tituloCanciones {
+    font-size: 28px;
+    margin: 10px 0 35px 0;
+    color:#311239;
+}
+
+#nombreArtista1 {
+    font-family: Jaro;
+    font-size: 30px;
+    color:#F2CD5E;
+}
+
+#nombreAlbum1 {
+    font-size: 35px;
+}
+
+#listaCanciones p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #311239;
+}
+
+#listaCanciones audio {
+    margin-bottom: 15px;
+}
+
+#fotoArtista {
+    border-radius: 15px;
+    margin-left: 20px;
 }
